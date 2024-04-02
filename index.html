@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WASM tests</title>
+  <script src="index.js"></script>
+  <script>
+    const wasmFib = Module.cwrap("fibonacci", "number", ["number"]);
+    function pressButton() {
+      console.log(`The result of fibonacci(5) is: ${wasmFib(5)}`);
+    }
+  </script> 
+</head>
+<body>
+  WASM tests
+  <button onclick="pressButton()">Fib me!</button>
+</body>
+</html>
